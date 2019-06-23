@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Content Editable Elements</title>
+    <link rel="stylesheet" type="text/css" href="contenteditable-element.css"/>
+    <script src="contenteditable-element.js"></script>
+</head>
+<body onload="onDocumentReady()">
+    <div id="page-wrapper">
+        <h1>Editable Page Elements with contenteditable</h1>
+
+        <section>
+            <h2>The contenteditable Attribute</h2>
+
+            <div contenteditable="true">
+                Click here to edit the text.
+            </div>
+        </section>
+
+        <section>
+            <h2>Toggle Editing with JavaScript</h2>
+
+            <button id="editorBtn" type="button">Enable Editing</button>
+            <div id="editor">
+                You will need to click the button to enable content editing before you can change this text.
+            </div>
+        </section>
+    </div>
+</body>
+</html>
