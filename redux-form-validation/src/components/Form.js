@@ -1,5 +1,7 @@
 import React, {Component} from 'react';
-import {PropTypes} from 'prop-types';
+import { connect } from 'react-redux';
+import { Field, reduxForm } from 'redux-form';
+
 
 class Form extends Component {
     constructor(props) {
@@ -14,24 +16,44 @@ class Form extends Component {
     }
     
     render() {
+      const { handleSubmit } = this.props;
         return (
             <div className="row">
             <h1 className="text-center">Form Validation</h1>
-            <form>
-                <h3>Name:
-                </h3>
+            <form onSubmit={handleSubmit}>
+                <h3>Name:</h3>
+                <Field name="name" component="input" type="text" />
                 <h3>Email:
                 </h3>
+                <Field name="email" component="input" type="text" />
                 <h3>Phone:
                 </h3>
-                <h3>Blog URL:
-                </h3>
+                <Field name="phone" component="input" type="text" />
+                <h3>Blog URL:</h3>
+                <Field name="blogurl" component="input" type="text" />
+
                 <div className="small-6 small-centered text-center columns">
-                    <a href="#" className="button success expand round text-center">Verify</a>
+                  <button type={'submit'} className="button success expand round text-center">Verify</button>
                 </div>
             </form>
         </div>);
     }
 }
+
+const mapStateToProps = (state) => {
+  return {
+    commonData: state.commonData
+  }
+}
+
+const mapDispatchToProps = dispatch => {
+  return {}
+}
+
+Form = connect(mapStateToProps, mapDispatchToProps)(Form);
+
+Form = reduxForm({
+  form: 'UserRegistration'
+})(Form);
 
 export default Form;
