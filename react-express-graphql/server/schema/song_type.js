@@ -1,9 +1,7 @@
-// const mongoose = require('mongoose');
 const graphql = require('graphql');
 const { GraphQLObjectType, GraphQLString, GraphQLID, GraphQLList } = graphql;
 const LyricType = require('./lyric_type');
-// const Song = mongoose.model('song');
-const dao = require('../dao')
+const dao = require('../db/dao')
 
 const SongType = new GraphQLObjectType({
   name:  'SongType',
@@ -13,7 +11,6 @@ const SongType = new GraphQLObjectType({
     lyrics: {
       type: new GraphQLList(LyricType),
       resolve(parentValue) {
-        // return Song.findLyrics(parentValue.id);
         return dao.all('SELECT * FROM Lyric WHERE song_id = ? ', [parentValue.id])
       }
     }

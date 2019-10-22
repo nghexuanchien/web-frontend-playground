@@ -1,4 +1,3 @@
-// const mongoose = require('mongoose');
 const graphql = require('graphql');
 const {
   GraphQLObjectType,
@@ -7,8 +6,8 @@ const {
   GraphQLInt,
   GraphQLString
 } = graphql;
-// const Lyric = mongoose.model('lyric');
-const dao = require('../dao')
+
+const dao = require('../db/dao')
 
 const LyricType = new GraphQLObjectType({
   name:  'LyricType',
@@ -19,11 +18,6 @@ const LyricType = new GraphQLObjectType({
     song: {
       type: require('./song_type'),
       resolve(parentValue) {
-        /*return Lyric.findById(parentValue).populate('song')
-          .then(lyric => {
-            console.log(lyric)
-            return lyric.song
-          });*/
         return dao.get('SELECT * FROM Lyric WHERE id = ?', [parentValue.id])
             .then((lyric) => {
               return dao.get('SELECT * FROM Song WHERE id = ? ', [lyric.song_id])
