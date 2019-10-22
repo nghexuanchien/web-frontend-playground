@@ -1,0 +1,8 @@
+<header class="modal-header">
+    <h1>Cropping the image</h1>
+</header>
+<a class="close" href="" title="Close" {{action "closeModal"}}>{{svg-jar "close"}}<span class="hidden">Close</span></a>
+
+<div class="modal-body">
+    {{gh-img-cropping-tool image=image onCropImage=onCropImage onCancelCrop=(action "closeModal")}}
+</div>

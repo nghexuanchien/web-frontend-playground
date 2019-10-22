@@ -1,0 +1,14 @@
+{{!-- full height content pane --}}
+<div>
+
+    {{#if openCropping}}
+        {{gh-fullscreen-modal "image-cropping"
+                              model=(hash
+                                  image=post.featureImageOrg
+                                  onCropImage=(action 'onCropFeatureImage')
+                              )
+                              close=(action 'closeCroppingTool')
+                              modifier="action wide"}}
+    {{/if}}
+
+</div>
