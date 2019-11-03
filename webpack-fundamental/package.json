@@ -10,7 +10,7 @@
     "@babel/polyfill": "^7.0.0-beta.37",
     "@babel/preset-env": "^7.0.0-beta.37",
     "babel-loader": "^8.0.0-beta.0",
-    "bower": "^1.8.2",
+    "bower": "^1.8.8",
     "clean-webpack-plugin": "^0.1.17",
     "eslint": "^4.15.0",
     "http-server": "^0.11.1",
