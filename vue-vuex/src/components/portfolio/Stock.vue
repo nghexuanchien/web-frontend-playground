@@ -65,7 +65,7 @@
                     quantity: this.quantity
                 };
                 this.placeSellOrder(order);
-                this.quantity = 0;
+                this.quantityInput = 0;
             }
         }
     }

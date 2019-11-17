@@ -63,7 +63,7 @@
                     quantity: this.quantity
                 };
                 this.$store.dispatch('buyStock', order);
-                this.quantity = 0;
+                this.quantityInput = 0;
             }
         }
     }
