@@ -1,0 +1,23 @@
+h1, body{
+    margin: 0px;
+}
+.main{
+    position: relative;
+}
+.sec-header, .sec-tail{
+    height: 1000px;
+}
+.sec-main, .video{
+    /*border: solid 1px black;*/
+    overflow: hidden;
+    height: 2000px;
+}
+
+video {
+    position: absolute;
+    left: 50%;
+    top: 0;
+    z-index: -100;
+    background-size: cover;
+    transform: translateX(-50%);
+}
